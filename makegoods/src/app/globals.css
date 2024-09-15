@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  word-break: keep-all;
+}
 
 :root {
   --background: #ffffff;

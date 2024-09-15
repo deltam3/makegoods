@@ -27,8 +27,9 @@ export default function Home() {
               </p>
             </div>
 
-            <ul className="mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
-              <div className="space-y-2 flex gap-10">
+            {/* <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-center items-start"> */}
+            <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-start items-center">
+              <div className="space-y-2 flex gap-10 justify-center ">
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-primary-300">
                     <svg
