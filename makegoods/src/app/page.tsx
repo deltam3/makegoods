@@ -1,9 +1,8 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Bag from "@/components/Bag";
-import Pad from "@/components/Bag";
-import Phone from "@/components/Phone";
 import Tshirt from "@/components/Tshirt";
 import { Check, Star } from "lucide-react";
+import { Icons } from "@/components/Icons";
 
 export default function Home() {
   return (
@@ -18,7 +17,9 @@ export default function Home() {
                 <span className="bg-yellow-400 px-2 text-white">
                   침착맨 굿즈
                 </span>
-                를 만들어봐요
+                를
+                <br />
+                만들어봐요
               </h1>
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
                 침착맨의 모든 순간을,{" "}
@@ -166,9 +167,95 @@ export default function Home() {
         </MaxWidthWrapper>
       </section>
 
-      <section>
+      {/* <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           <div className="flex"></div>
+        </MaxWidthWrapper>
+      </section> */}
+
+      <section className="bg-slate-100 grainy-dark py-24">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              고객님들의{" "}
+              <span className="relative px-2">
+                소중한{" "}
+                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-yellow-400" />
+              </span>{" "}
+              후기
+            </h2>
+            <img src="/testimonial.png" className="w-24 order-0 lg:order-2" />
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "최근에 새로운 에코 백을 구매했는데,{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    정말 만족스러워서
+                  </span>{" "}
+                  여러분과 공유하고 싶어요. 에코 백은 저에게 중요한 액세서리 중
+                  하나인데, 스타일과 기능성 모두 신경 쓰기 때문에 꼼꼼히
+                  선택하게 되더라고요."
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img
+                  className="rounded-full h-12 w-12 object-cover"
+                  src="/users/user-2.webp"
+                  alt="차은우"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">차은우</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-yellow-400" />
+                    <p className="text-sm">에코 백 구매</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "티셔츠는 기본에 충실하고,{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    색상과 핏이 굉장히 마음에 듭니다.
+                  </span>
+                  "
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img
+                  className="rounded-full h-12 w-12 object-cover"
+                  src="/users/user-4.jpg"
+                  alt="유재석"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">유재석</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-yellow-400" />
+                    <p className="text-sm">티셔츠 구매</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </MaxWidthWrapper>
       </section>
     </div>

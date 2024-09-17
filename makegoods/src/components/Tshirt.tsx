@@ -6,7 +6,7 @@ interface TshirtProps extends HTMLAttributes<HTMLDivElement> {
   dark?: boolean;
 }
 
-const Tshirt = ({ imgSrc, className, dark = false, ...props }: PhoneProps) => {
+const Tshirt = ({ imgSrc, className, dark = false, ...props }: TshirtProps) => {
   return (
     <div
       className={cn(
@@ -18,7 +18,7 @@ const Tshirt = ({ imgSrc, className, dark = false, ...props }: PhoneProps) => {
       <img
         src={"/tshirt1-template.png"}
         className="pointer-events-none z-50 select-none w-96"
-        alt="핸드폰 이미지"
+        alt="티셔츠 이미지"
       />
 
       <div className="absolute -z-10 top-[15%] w-[40%] h-[20%]  inset-0 mx-auto">
