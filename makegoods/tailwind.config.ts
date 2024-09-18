@@ -65,6 +65,11 @@ const config = {
             transform: "translateY(-50%)",
           },
         },
+        rotate: {
+          to: {
+            transform: "rotate(1turn)",
+          },
+        },
       },
       animation: {
         marquee: "marquee var(--marquee-duration) linear infinite",

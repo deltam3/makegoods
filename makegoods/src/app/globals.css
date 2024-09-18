@@ -94,3 +94,7 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
+
+.spinner-mini {
+  animation: rotate 1.5s infinite linear;
+}
