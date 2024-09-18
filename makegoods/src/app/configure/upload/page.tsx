@@ -35,7 +35,7 @@ const Page = () => {
       title: `${file.file.type} 파일 포맷은 지원되지 않습니다.`,
       description: "PNG, JPG, JPEG 형식의 이미지 파일만 지원됩니다.",
       variant: "destructive",
-      action: <img src="/king1.webp" className="w-36" />,
+      action: <img src="/mint.gif" className="w-48" />,
     });
   };
 
