@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "../components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import QueryProviders from "@/Providers/QueryProviders";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -34,18 +35,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <QueryProviders> */}
-        <Navbar />
-        {/* {children} */}
-        {/* <Footer /> */}
+        <QueryProviders>
+          <Navbar />
+          {/* {children} */}
+          {/* <Footer /> */}
 
-        <main className="flex grainy-light flex-col min-h-[calc(100vh-3.5rem-1px)]">
-          <div className="flex-1 flex flex-col h-full">{children}</div>
-          <Footer />
-        </main>
+          <main className="flex grainy-light flex-col min-h-[calc(100vh-3.5rem-1px)]">
+            <div className="flex-1 flex flex-col h-full">{children}</div>
+            <Footer />
+          </main>
 
-        <Toaster />
-        {/* </QueryProviders> */}
+          <Toaster />
+        </QueryProviders>
       </body>
     </html>
   );

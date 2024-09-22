@@ -1,6 +1,7 @@
 "use client";
+import { createClient } from "../../../../utils/supabase/client";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import Dropzone, { FileRejection } from "react-dropzone";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/components/ui/use-toast";
@@ -13,10 +14,40 @@ const Page = () => {
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const router = useRouter();
+  const supabase = createClient();
 
   const { startUpload, isUploading } = useUploadThing("imageUploader", {
-    onClientUploadComplete: ([data]) => {
-      const configId = data.serverData.configId;
+    onClientUploadComplete: async ([data]) => {
+      // console.log(data);
+      const { width, height, fileUrl } = data.serverData;
+      // console.log(width, height, fileUrl);
+      let configId = undefined;
+      if (!configId) {
+        const { data, error } = await supabase
+          .from("configuration")
+          .insert([
+            {
+              imageurl: fileUrl,
+              height: height || 500,
+              width: width || 500,
+            },
+          ])
+          .select();
+
+        console.log(data);
+        // configId = data.configId;
+        configId = data[0].id;
+      } else {
+        const { data, error } = await supabase
+          .from("configuration")
+          .update({ croppedimageurl: fileUrl })
+          .eq("id", configId)
+          .select();
+        console.log(data);
+        configId = data[0].id;
+      }
+      localStorage.setItem("orgimageurl", fileUrl);
+
       startTransition(() => {
         router.push(`/configure/design?id=${configId}`);
       });

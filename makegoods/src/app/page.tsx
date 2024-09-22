@@ -4,7 +4,6 @@ import Tshirt from "@/components/Tshirt";
 import { ArrowRight, Check, Star } from "lucide-react";
 import { Icons } from "@/components/Icons";
 import { Reviews } from "../components/Reviews";
-import Phone from "../components/Phone";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -32,7 +31,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-center items-start"> */}
             <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-start items-center">
               <div className="space-y-2 flex gap-10 justify-center ">
                 <li className="flex gap-1.5 items-center text-left">
@@ -170,12 +168,6 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
-
-      {/* <section>
-        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
-          <div className="flex"></div>
-        </MaxWidthWrapper>
-      </section> */}
 
       <section className="bg-slate-100 grainy-dark py-24">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">

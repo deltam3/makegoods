@@ -52,10 +52,6 @@ function ReviewColumn({
     });
 
     resizeObserver.observe(columnRef.current);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
   }, []);
 
   return (
