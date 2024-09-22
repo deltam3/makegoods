@@ -162,7 +162,7 @@ export default function Home() {
 
           <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
             <div className="relative md:max-w-xl flex items-center">
-              <Tshirt className="w-48 l:w-64" imgSrc="/testimonials/1.jpg" />
+              {/* <Tshirt className="w-48 l:w-64" imgSrc="/testimonials/1.jpg" /> */}
               <Bag className="w-48 l:w-64" imgSrc="/testimonials/4.jpg" />
             </div>
           </div>

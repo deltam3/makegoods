@@ -39,10 +39,10 @@ const Steps = () => {
             <div className={cn("", { "bg-yellow-400": isCurrent })}>
               <span
                 className={cn(
-                  "absolute left-0 top-0 h-full w-1 bg-zinc-400 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full",
+                  "absolute left-0 top-0 h-full w-1 bg-zinc-400 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full ",
                   {
-                    "bg-zinc-700": isCurrent,
-                    "bg-primary": isCompleted,
+                    // "bg-zinc-700": isCompleted,
+                    // "bg-primary": isCurrent,
                   }
                 )}
                 aria-hidden="true"

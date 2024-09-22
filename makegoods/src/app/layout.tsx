@@ -1,5 +1,5 @@
 // import type { Metadata } from "next";
-// import localFont from "next/font/local";
+import { Recursive } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "../components/Footer";
@@ -16,6 +16,8 @@ import QueryProviders from "@/Providers/QueryProviders";
 //   variable: "--font-geist-mono",
 //   weight: "100 900",
 // });
+
+const recursive = Recursive({ subsets: ["latin"] });
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -34,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={recursive.className}>
         <QueryProviders>
           <Navbar />
           {/* {children} */}
