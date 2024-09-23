@@ -2,15 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { BASE_PRICE, PRODUCT_PRICES } from "@/config/products";
-import { cn, formatPrice } from "@/lib/utils";
-import { MATERIALS, FINISHES, SIZES } from "@/validators/option-validator";
-import { useMutation } from "@tanstack/react-query";
+import { formatPrice } from "@/lib/utils";
+import { SIZES } from "@/validators/option-validator";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import Confetti from "react-dom-confetti";
 import { useRouter } from "next/navigation";
-import { useToast } from "@/components/ui/use-toast";
 import Tshirt from "@/components/Tshirt";
+import LoginModal from "@/components/LoginModal";
 
 type Configuration = {
   id: string;
@@ -24,10 +23,16 @@ type Configuration = {
   Order: any;
 };
 
-const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
+const DesignPreview = ({
+  configuration,
+  user,
+}: {
+  configuration: Configuration;
+  user: any;
+}) => {
   const router = useRouter();
-  const { toast } = useToast();
   const { id } = configuration;
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   useEffect(() => setShowConfetti(true));
@@ -43,8 +48,12 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   if (finish === "present") totalPrice += PRODUCT_PRICES.finish.present;
 
   const handleCheckout = () => {
-    localStorage.setItem("configurationId", id);
-    router.push("/");
+    if (user) {
+      router.push(`/order/checkout?id=${id}`);
+    } else {
+      localStorage.setItem("configurationId", id);
+      setIsLoginModalOpen(true);
+    }
   };
 
   return (
@@ -55,9 +64,10 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
       >
         <Confetti
           active={showConfetti}
-          config={{ elementCount: 200, spread: 90 }}
+          config={{ elementCount: 300, spread: 190 }}
         />
       </div>
+      <LoginModal isOpen={isLoginModalOpen} setIsOpen={setIsLoginModalOpen} />
 
       <div className="mt-20 flex flex-col items-center md:grid text-sm sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-6 md:gap-x-8 lg:gap-x-12">
         <div className="md:col-span-4 lg:col-span-3 md:row-span-2 md:row-end-2">
@@ -102,31 +112,31 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
               <div className="flow-root text-sm">
                 <div className="flex items-center justify-between py-1 mt-2">
                   <p className="text-gray-600">기본 가격</p>
-                  <p className="font-medium text-gray-900">
+                  <span className="font-medium text-gray-900">
                     {formatPrice(BASE_PRICE)}
-                  </p>
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between py-1 mt-2">
                   <p className="text-gray-600">사이즈</p>
-                  <p className="font-medium text-gray-900">{sizeLabel}</p>
+                  <span className="font-medium text-gray-900">{sizeLabel}</span>
                 </div>
 
                 {finish === "present" ? (
                   <div className="flex items-center justify-between py-1 mt-2">
                     <p className="text-gray-600">선물용 포장 여부</p>
-                    <p className="font-medium text-gray-900">
+                    <span className="font-medium text-gray-900">
                       {formatPrice(PRODUCT_PRICES.finish.present)}
-                    </p>
+                    </span>
                   </div>
                 ) : null}
 
                 {material === "poly" ? (
                   <div className="flex items-center justify-between py-1 mt-2">
                     <p className="text-gray-600">폴리에스티르</p>
-                    <p className="font-medium text-gray-900">
+                    <span className="font-medium text-gray-900">
                       {formatPrice(PRODUCT_PRICES.material.poly)}
-                    </p>
+                    </span>
                   </div>
                 ) : null}
 
@@ -135,12 +145,12 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                 <div className="flex items-center justify-between py-2">
                   <p className="font-semibold text-gray-900">총 금액</p>
 
-                  <p className="font-semibold text-gray-900 text-right">
-                    <p className="font-semibold text-gray-900 line-through">
+                  <div className="font-semibold text-gray-900 text-right">
+                    <div className="font-semibold text-gray-900 line-through">
                       {formatPrice(totalPrice)}
-                    </p>
+                    </div>
                     2024년 12월 31일까지 무료
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

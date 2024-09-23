@@ -17,17 +17,21 @@ const Page = async ({ searchParams }: PageProps) => {
 
   const supabase = createClient();
 
-  const { data: configuration, error } = await supabase
+  const { data: configuration } = await supabase
     .from("configuration")
     .select("*")
     .eq("id", id)
     .single();
 
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   if (!configuration) {
     return notFound();
   }
 
-  return <DesignPreview configuration={configuration} />;
+  return <DesignPreview configuration={configuration} user={user} />;
 };
 
 export default Page;

@@ -4,12 +4,6 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import HeaderAuth from "../components/header-auth";
 
 const Navbar = async () => {
-  // const user = {
-  //   email: "google@gmail.com",
-  // };
-  const user = false;
-  const isAdmin = true;
-
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>

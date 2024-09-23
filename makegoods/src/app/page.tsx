@@ -1,6 +1,6 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Bag from "@/components/Bag";
-import Tshirt from "@/components/Tshirt";
+// import Tshirt from "@/components/Tshirt";
 import { ArrowRight, Check, Star } from "lucide-react";
 import { Icons } from "@/components/Icons";
 import { Reviews } from "../components/Reviews";

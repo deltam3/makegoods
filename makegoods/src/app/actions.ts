@@ -12,7 +12,7 @@ export const signUpAction = async (formData: FormData) => {
   const origin = headers().get("origin");
 
   if (!email || !password) {
-    return { error: "Email and password are required" };
+    return { error: "이메일과 비밀번호는 필수입니다." };
   }
 
   const { error } = await supabase.auth.signUp({
@@ -27,11 +27,7 @@ export const signUpAction = async (formData: FormData) => {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
   } else {
-    return encodedRedirect(
-      "success",
-      "/sign-up",
-      "Thanks for signing up! Please check your email for a verification link."
-    );
+    return encodedRedirect("success", "/auth-callback", "회원가입 감사합니다.");
   }
 };
 
@@ -49,7 +45,7 @@ export const signInAction = async (formData: FormData) => {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
-  return redirect("/protected");
+  return redirect("/auth-callback");
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
