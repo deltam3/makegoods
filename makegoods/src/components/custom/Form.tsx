@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { cn } from "../../lib/utils";
 
 interface FormProps {
   type?: "modal" | "regular";
+  children: ReactNode;
 }
 
 const Form: React.FC<FormProps> = ({ type = "regular", children }) => {
