@@ -42,5 +42,5 @@ export const postOrder = async (formData: FormData) => {
     ])
     .select();
 
-  return redirect("/buy-result");
+  return redirect("/order/checkout-result");
 };
