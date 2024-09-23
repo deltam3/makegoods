@@ -72,7 +72,7 @@ const Page = () => {
 
   const onDropAccepted = (acceptedFiles: File[]) => {
     // startUpload(acceptedFiles, { configId: undefined });
-    const response = await startUpload(acceptedFiles, {
+    startUpload(acceptedFiles, {
       configId: undefined,
     } as any);
 
