@@ -165,7 +165,8 @@ const DesignConfigurator = ({
       const blob = base64ToBlob(base64Data, "image/png");
       const file = new File([blob], "filename.png", { type: "image/png" });
 
-      const response = await startUpload([file], { configId });
+      // const response = await startUpload([file], { configId });
+      const response = await startUpload([file], { configId } as any);
       // console.log(response);
       console.log(response[0].serverData.fileUrl);
 
