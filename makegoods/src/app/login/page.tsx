@@ -60,3 +60,5 @@
 //     </div>
 //   );
 // }
+
+export default function Page() {}
