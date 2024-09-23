@@ -35,7 +35,7 @@ export default function Home() {
               <div className="space-y-2 flex gap-10 justify-center ">
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-primary-300">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
@@ -70,13 +70,13 @@ export default function Home() {
                         stroke-width="3"
                         d="M39.667 46.666a4.667 4.667 0 1 0 0-9.333 4.667 4.667 0 0 0 0 9.333m-23.333 0a4.667 4.667 0 1 0 0-9.333 4.667 4.667 0 0 0 0 9.333"
                       ></path>
-                    </svg>
+                    </svg> */}
                   </div>
                   당일 배송
                 </li>
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-green-300">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
@@ -115,13 +115,13 @@ export default function Home() {
                         stroke-width="3"
                         d="M42.934 22.4a4.95 4.95 0 0 1 7 7L39.667 39.667 30.334 42l2.333-9.333z"
                       ></path>
-                    </svg>
+                    </svg> */}
                   </div>
                   1 년 A/S
                 </li>
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-yellow-300">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
@@ -152,7 +152,7 @@ export default function Home() {
                         stroke-width="3"
                         d="M40.864 7.136 30.667 17.333l-3.71-3.71a4.667 4.667 0 0 0-6.58 0l-3.71 3.71 21 21 3.71-3.71a4.666 4.666 0 0 0 0-6.58l-3.71-3.71 10.197-10.197a4.95 4.95 0 0 0-7-7"
                       ></path>
-                    </svg>
+                    </svg> */}
                   </div>
                   침착맨 싸인
                 </li>
