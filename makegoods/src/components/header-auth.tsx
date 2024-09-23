@@ -175,7 +175,7 @@ export default async function AuthButton() {
     </div>
   ) : (
     <div className="flex gap-2">
-      <Link href="/login" passHref>
+      <Link href="/sign-in" passHref>
         <Button size="sm" variant={"outline"}>
           로그인
         </Button>
