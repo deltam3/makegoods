@@ -71,7 +71,10 @@ const Page = () => {
   };
 
   const onDropAccepted = (acceptedFiles: File[]) => {
-    startUpload(acceptedFiles, { configId: undefined });
+    // startUpload(acceptedFiles, { configId: undefined });
+    const response = await startUpload(acceptedFiles, {
+      configId: undefined,
+    } as any);
 
     setIsDragOver(false);
   };
