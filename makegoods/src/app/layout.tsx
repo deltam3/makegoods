@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "../components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import QueryProviders from "@/Providers/QueryProviders";
+import { constructMetadata } from "@/lib/utils";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -23,11 +24,13 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
-export const metadata = {
-  metadataBase: new URL(defaultUrl),
-  title: "침착맨 굿즈 쇼핑몰",
-  description: "침착맨 팬들을 위한 굿즈",
-};
+// export const metadata = {
+//   metadataBase: new URL(defaultUrl),
+//   title: "침착맨 굿즈 쇼핑몰",
+//   description: "침착맨 팬들을 위한 굿즈",
+// };
+
+export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,
