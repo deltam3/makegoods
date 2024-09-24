@@ -61,4 +61,6 @@
 //   );
 // }
 
-export default function Page() {}
+export default function Page() {
+  return <div>not used</div>;
+}
