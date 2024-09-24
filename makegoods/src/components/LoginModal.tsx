@@ -43,7 +43,7 @@ const LoginModal = ({
 
         <div className="flex justify-center gap-2 divide-gray-200">
           <Link
-            href="/login"
+            href="/sign-in"
             className={buttonVariants({ variant: "outline" })}
           >
             로그인
