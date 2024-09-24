@@ -31,7 +31,7 @@ const CheckoutForm = ({ configId, userId }: CheckoutFormType) => {
 
             <Input type="hidden" name="configId" value={configId} required />
             <Input type="hidden" name="userId" value={userId} required />
-            <SubmitButton pendingText="로그인중..." formAction={postOrder}>
+            <SubmitButton pendingText="진행중..." formAction={postOrder}>
               무료로 굿즈 받기
             </SubmitButton>
           </div>
