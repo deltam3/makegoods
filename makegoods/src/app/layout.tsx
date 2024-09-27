@@ -1,4 +1,3 @@
-// import type { Metadata } from "next";
 import { Recursive } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -7,28 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import QueryProviders from "@/Providers/QueryProviders";
 import { constructMetadata } from "@/lib/utils";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
 const recursive = Recursive({ subsets: ["latin"] });
-
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
-
-// export const metadata = {
-//   metadataBase: new URL(defaultUrl),
-//   title: "침착맨 굿즈 쇼핑몰",
-//   description: "침착맨 팬들을 위한 굿즈",
-// };
 
 export const metadata = constructMetadata();
 

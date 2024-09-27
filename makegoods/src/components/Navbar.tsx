@@ -11,6 +11,7 @@ const Navbar = async () => {
           <Link href="/" className="flex z-40 font-semibold">
             <img src="/logo.png" className="w-[30%]" />
           </Link>
+
           <HeaderAuth />
         </div>
       </MaxWidthWrapper>
