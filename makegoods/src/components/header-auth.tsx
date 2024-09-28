@@ -13,48 +13,6 @@ export default async function AuthButton() {
 
   const isAdmin = user?.email === process.env.ADMIN_EMAIL;
 
-  // if (!hasEnvVars) {
-  //   return (
-  //     <div className="flex gap-4 items-center">
-  //       <Badge variant={"default"} className="font-normal pointer-events-none">
-  //         Please update .env.local file with anon key and url
-  //       </Badge>
-  //       <div className="flex gap-2">
-  //         <Link href="/sign-in" passHref>
-  //           <Button
-  //             size="sm"
-  //             variant={"outline"}
-  //             disabled
-  //             className="opacity-75 cursor-none pointer-events-none"
-  //           >
-  //             로그인
-  //           </Button>
-  //         </Link>
-  //         <Link href="/sign-up" passHref>
-  //           <Button
-  //             size="sm"
-  //             variant={"default"}
-  //             disabled
-  //             className="opacity-75 cursor-none pointer-events-none"
-  //           >
-  //             회원가입
-  //           </Button>
-  //         </Link>
-  //         <Link
-  //           href="/configure/upload"
-  //           className={buttonVariants({
-  //             size: "sm",
-  //             className: "hidden sm:flex items-center gap-1",
-  //           })}
-  //         >
-  //           굿즈 제작하기
-  //           <ArrowRight className="ml-1.5 h-5 w-5" />
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   if (isAdmin) {
     return (
       <div className="flex items-center gap-4">
@@ -64,6 +22,15 @@ export default async function AuthButton() {
             로그아웃
           </Button>
         </form>
+        <Link
+          href="/mypage"
+          className={buttonVariants({
+            size: "sm",
+            className: "hidden sm:flex items-center gap-1",
+          })}
+        >
+          내 정보
+        </Link>
         <Link
           href="/admin"
           className={buttonVariants({
@@ -86,37 +53,6 @@ export default async function AuthButton() {
       </div>
     );
   }
-  // return (
-  //   isAdmin && (
-  //     <div className="flex items-center gap-4">
-  //       {user.email}님!
-  //       <form action={signOutAction}>
-  //         <Button type="submit" variant={"outline"}>
-  //           로그아웃
-  //         </Button>
-  //       </form>
-  //       <Link
-  //         href="/admin"
-  //         className={buttonVariants({
-  //           size: "sm",
-  //           className: "hidden sm:flex items-center gap-1",
-  //         })}
-  //       >
-  //         관리자
-  //       </Link>
-  //       <Link
-  //         href="/configure/upload"
-  //         className={buttonVariants({
-  //           size: "sm",
-  //           className: "hidden sm:flex items-center gap-1",
-  //         })}
-  //       >
-  //         굿즈 제작하기
-  //         <ArrowRight className="ml-1.5 h-5 w-5" />
-  //       </Link>
-  //     </div>
-  //   )
-  // );
 
   return user ? (
     <div className="flex items-center gap-4">
@@ -126,6 +62,15 @@ export default async function AuthButton() {
           로그아웃
         </Button>
       </form>
+      <Link
+        href="/mypage"
+        className={buttonVariants({
+          size: "sm",
+          className: "hidden sm:flex items-center gap-1",
+        })}
+      >
+        내 정보
+      </Link>
       <Link
         href="/configure/upload"
         className={buttonVariants({
