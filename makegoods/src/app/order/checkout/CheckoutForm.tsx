@@ -15,9 +15,10 @@ type CheckoutFormType = {
 const CheckoutForm = ({ configId, userId }: CheckoutFormType) => {
   return (
     <MaxWidthWrapper>
-      <div className="flex justify-center align-middle mt-10">
+      {/* <div className="flex justify-center align-middle mt-10"> */}
+      <div className="mt-10">
         <form>
-          <h2 className="tracking-tight font-bold text-3xl">배송정보</h2>
+          <h2 className="tracking-tight font-bold text-3xl">내 정보</h2>
           <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
             <Label htmlFor="address">주소</Label>
             <Input name="address" placeholder="서울시" required />

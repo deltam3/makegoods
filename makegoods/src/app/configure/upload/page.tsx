@@ -18,9 +18,7 @@ const Page = () => {
 
   const { startUpload, isUploading } = useUploadThing("imageUploader", {
     onClientUploadComplete: async ([data]) => {
-      // console.log(data);
       const { width, height, fileUrl } = data.serverData;
-      // console.log(width, height, fileUrl);
       let configId = undefined;
       if (!configId) {
         const { data, error } = await supabase
@@ -34,8 +32,6 @@ const Page = () => {
           ])
           .select();
 
-        console.log(data);
-        // configId = data.configId;
         configId = data[0].id;
       } else {
         const { data, error } = await supabase
@@ -71,7 +67,6 @@ const Page = () => {
   };
 
   const onDropAccepted = (acceptedFiles: File[]) => {
-    // startUpload(acceptedFiles, { configId: undefined });
     startUpload(acceptedFiles, {
       configId: undefined,
     } as any);

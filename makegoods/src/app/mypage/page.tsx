@@ -72,11 +72,11 @@ export default async function Home() {
   }, {});
 
   return (
-    <div className="flex min-h-screen w-full bg-muted/40">
+    <div className="flex min-h-screen w-full">
       <div className="max-w-7xl w-full mx-auto flex flex-col sm:gap-4 sm:py-4">
         <div className="flex flex-col gap-16">
           <h3 className="text-3xl font-bold tracking-tight text-gray-900">
-            주문 내역
+            구매 내역
           </h3>
           <div className="grid gap-4 sm:grid-cols-3">
             {allOrders.map((order) => {
@@ -97,7 +97,7 @@ export default async function Home() {
                         />
                       </div>
                       <div className="flex flex-col gap-4">
-                        <CardDescription>
+                        <CardDescription className="whitespace-nowrap">
                           {new Date(order.createdat).toLocaleDateString()} 결제
                         </CardDescription>
                         <p>{formatPrice(order.amount)}</p>
