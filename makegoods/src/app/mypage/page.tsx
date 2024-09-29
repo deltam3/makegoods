@@ -80,7 +80,8 @@ export default async function Home() {
             <h3 className="text-3xl font-bold tracking-tight text-gray-900">
               구매 내역
             </h3>
-            <div className="grid gap-4 sm:grid-cols-3">
+            {/* <div className="grid gap-4 grid-cols-2 lg:grid-cols-3"> */}
+            <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
               {allOrders.map((order) => {
                 const config = configMap[order.configurationid];
                 return (
@@ -91,7 +92,7 @@ export default async function Home() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="flex gap-4">
+                      <div className="flex gap-4 items-center">
                         <div className="md:col-span-4 lg:col-span-3 md:row-span-2 md:row-end-2">
                           <Tshirt
                             className="max-w-[150px]"
