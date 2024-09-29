@@ -6,13 +6,15 @@ import { Icons } from "@/components/Icons";
 import { Reviews } from "../components/Reviews";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import Tshirt from "@/components/Tshirt";
 
 export default function Home() {
   return (
     <div className="bg-slate-50 grainy-light">
       <section>
-        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
-          <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
+        {/* <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52"> */}
+        <MaxWidthWrapper className="flex flex-col lg:flex-row">
+          <div className="col-span-1 px-6 lg:px-0 lg:pt-4 py-5">
             <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-4sxl">
                 당신만의
@@ -24,14 +26,27 @@ export default function Home() {
                 <br />
                 만들어봐요
               </h1>
-              <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
-                침착맨의 모든 순간을,{" "}
-                <span className="font-semibold">특별하고</span> 다양한 굿즈에
-                각인해보세요.
-              </p>
+              <div className="flex align-middle gap-5">
+                {/* <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
+                  침착맨의 모든 순간을,{" "}
+                  <span className="font-semibold">특별하고</span> 다양한 굿즈에
+                  각인해보세요.
+                </p> */}
+                <div className="flex justify-center align-middle">
+                  <Link
+                    className={buttonVariants({
+                      size: "lg",
+                      className: "mx-auto mt-8",
+                    })}
+                    href="/configure/upload"
+                  >
+                    무료로 굿즈 제작하기{" "}
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-start items-center">
+            {/* <ul className="mt-8 space-y-2 text-left font-medium flex flex-col lg:items-start items-center">
               <div className="space-y-2 flex gap-10 justify-center ">
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-primary-300">
@@ -72,7 +87,7 @@ export default function Home() {
                       ></path>
                     </svg>
                   </div>
-                  당일 배송
+                  <span className="whitespace-nowrap">당일 배송</span>
                 </li>
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-green-300">
@@ -117,7 +132,7 @@ export default function Home() {
                       ></path>
                     </svg>
                   </div>
-                  1 년 A/S
+                  <span className="whitespace-nowrap">1 년 A/S</span>
                 </li>
                 <li className="flex gap-1.5 items-center text-left">
                   <div className="rounded-full border-[3px] border-black p-2 bg-yellow-300">
@@ -154,16 +169,27 @@ export default function Home() {
                       ></path>
                     </svg>
                   </div>
-                  침착맨 싸인
+                  <span className="whitespace-nowrap">침착맨 싸인</span>
                 </li>
               </div>
-            </ul>
+            </ul> */}
           </div>
 
-          <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
-            <div className="relative md:max-w-xl flex items-center">
-              {/* <Tshirt className="w-48 l:w-64" imgSrc="/testimonials/1.jpg" /> */}
-              <Bag className="w-48 l:w-64" imgSrc="/testimonials/4.jpg" />
+          <div className="px-6 lg:px-8 col-span-2 py-5">
+            <div className="grid grid-cols-3">
+              <div className="relative col-span-1 flex justify-center">
+                <img
+                  src="/testimonials/4.jpg"
+                  className="rounded-md object-contain w-full"
+                />
+              </div>
+
+              <div className="col-span-1 flex items-center justify-center h-full">
+                <img src="/arrow2.png" className="w-[50%] md:w-full h-auto" />
+              </div>
+              <div className="col-span-1">
+                <Bag className="w-30 md:w-60" imgSrc="/testimonials/4.jpg" />
+              </div>
             </div>
           </div>
         </MaxWidthWrapper>

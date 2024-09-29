@@ -16,7 +16,8 @@ export default async function AuthButton() {
   if (isAdmin) {
     return (
       <div className="flex items-center gap-4">
-        {user.email}님!
+        {/* {user.email}님! */}
+        <span className="hidden md:block">{user.email}님!</span>
         <form action={signOutAction}>
           <Button type="submit" variant={"outline"}>
             로그아웃
@@ -26,7 +27,7 @@ export default async function AuthButton() {
           href="/mypage"
           className={buttonVariants({
             size: "sm",
-            className: "hidden sm:flex items-center gap-1",
+            className: "flex items-center gap-1",
           })}
         >
           내 정보
@@ -35,12 +36,12 @@ export default async function AuthButton() {
           href="/admin"
           className={buttonVariants({
             size: "sm",
-            className: "hidden sm:flex items-center gap-1",
+            className: "flex items-center gap-1",
           })}
         >
           관리자
         </Link>
-        <Link
+        {/* <Link
           href="/configure/upload"
           className={buttonVariants({
             size: "sm",
@@ -49,14 +50,14 @@ export default async function AuthButton() {
         >
           굿즈 제작하기
           <ArrowRight className="ml-1.5 h-5 w-5" />
-        </Link>
+        </Link> */}
       </div>
     );
   }
 
   return user ? (
     <div className="flex items-center gap-4">
-      {user.email}님!
+      <span className="hidden md:block">{user.email}님!</span>
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           로그아웃
@@ -66,12 +67,12 @@ export default async function AuthButton() {
         href="/mypage"
         className={buttonVariants({
           size: "sm",
-          className: "hidden sm:flex items-center gap-1",
+          className: "flex items-center gap-1",
         })}
       >
         내 정보
       </Link>
-      <Link
+      {/* <Link
         href="/configure/upload"
         className={buttonVariants({
           size: "sm",
@@ -80,7 +81,7 @@ export default async function AuthButton() {
       >
         굿즈 제작하기
         <ArrowRight className="ml-1.5 h-5 w-5" />
-      </Link>
+      </Link> */}
     </div>
   ) : (
     <div className="flex gap-2">
@@ -94,7 +95,7 @@ export default async function AuthButton() {
           회원가입
         </Button>
       </Link>
-      <Link
+      {/* <Link
         href="/configure/upload"
         className={buttonVariants({
           size: "sm",
@@ -103,7 +104,7 @@ export default async function AuthButton() {
       >
         굿즈 제작하기
         <ArrowRight className="ml-1.5 h-5 w-5" />
-      </Link>
+      </Link> */}
     </div>
   );
 }
