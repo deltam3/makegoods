@@ -4,6 +4,22 @@ import { createClient } from "../../../../utils/supabase/server";
 
 const supabase = createClient();
 
+export const updateAddress = async (formData: FormData) => {
+  const address = formData.get("address") as string;
+
+  const { data, error } = await supabase.auth.updateUser({
+    data: {
+      address: address,
+    },
+  });
+
+  if (error) {
+    console.log(error);
+  }
+
+  return data;
+};
+
 export const updatePhone = async (formData: FormData) => {
   const phoneNumber = formData.get("phoneNumber") as string;
 

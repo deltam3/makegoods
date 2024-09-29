@@ -27,13 +27,18 @@ const Page = async ({ searchParams }: PageProps) => {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // console.log(user);
-
   if (!configuration) {
     return notFound();
   }
 
-  return <CheckoutForm configId={configuration.id} userId={user?.id} />;
+  return (
+    <CheckoutForm
+      configId={configuration.id}
+      userId={user?.id}
+      userAddress={user?.user_metadata.address}
+      userPhone={user?.user_metadata.phone}
+    />
+  );
 };
 
 export default Page;

@@ -14,9 +14,11 @@ const Page = async () => {
   }
 
   const editUserData = {
-    // address: user.user_metadata.address,
+    address: user.user_metadata.address,
     phone: user?.user_metadata?.phone,
   };
+
+  console.log(user);
 
   return <MyInfoForm user={editUserData} />;
 };

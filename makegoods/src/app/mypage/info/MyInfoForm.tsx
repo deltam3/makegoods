@@ -5,12 +5,13 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { updatePhone, changePassword } from "./actions";
+import { updateAddress, updatePhone, changePassword } from "./actions";
 
 import { useState } from "react";
 
 type MyInfoFormPropsType = {
   user: {
+    address: string;
     phone: string;
   };
 };
@@ -20,7 +21,27 @@ import { useToast } from "@/components/ui/use-toast";
 
 const MyInfoForm = ({ user }: MyInfoFormPropsType) => {
   const [userPhone, setUserPhone] = useState(user.phone);
+  const [userAddress, setUserAddress] = useState(user.address);
   const { toast } = useToast();
+
+  const { mutate: saveAddress, isPending: isAddressPending } = useMutation({
+    mutationKey: ["save-address"],
+    mutationFn: updateAddress,
+    onError: () => {
+      toast({
+        title: "에러 발생",
+        description: "다시 시도해주세요.",
+        variant: "destructive",
+      });
+    },
+    onSuccess: () => {
+      toast({
+        title: "성공",
+        description: "주소 변경 성공!.",
+        variant: "success",
+      });
+    },
+  });
 
   const { mutate: savePhone, isPending: isPhonePending } = useMutation({
     mutationKey: ["save-phone"],
@@ -65,8 +86,32 @@ const MyInfoForm = ({ user }: MyInfoFormPropsType) => {
       <div className="mt-10">
         <h2 className="tracking-tight font-bold text-3xl">내 정보</h2>
         <div className="flex flex-col [&>input]:mb-3 mt-8 gap-4">
-          {/* <Label htmlFor="address">주소</Label>
-            <Input name="address" placeholder="서울시" required /> */}
+          <Card>
+            <CardHeader>
+              <Label htmlFor="address">주소</Label>
+            </CardHeader>
+            <CardContent>
+              <form>
+                <Input
+                  type="text"
+                  name="address"
+                  placeholder="주소"
+                  value={userAddress}
+                  onChange={(e) => setUserAddress(e.target.value)}
+                  required
+                />
+
+                <div className="flex justify-end mt-2">
+                  <SubmitButton
+                    pendingText="진행중..."
+                    formAction={saveAddress}
+                  >
+                    저장
+                  </SubmitButton>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
           <Card>
             <CardHeader>
               <Label htmlFor="phoneNumber">연락처</Label>
