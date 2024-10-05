@@ -196,6 +196,9 @@ export default function Home() {
       </section>
 
       <section className="bg-slate-100 grainy-dark py-24">
+        <div className="pt-16">
+          <Reviews />
+        </div>
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
             <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
@@ -279,9 +282,9 @@ export default function Home() {
             </div>
           </div>
         </MaxWidthWrapper>
-        <div className="pt-16">
+        {/* <div className="pt-16">
           <Reviews />
-        </div>
+        </div> */}
       </section>
 
       <section>
