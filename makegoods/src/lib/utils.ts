@@ -29,6 +29,7 @@ export function constructMetadata({
   return {
     title,
     description,
+
     openGraph: {
       title,
       description,
