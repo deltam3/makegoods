@@ -1,21 +1,38 @@
-/**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
+// import type { Config } from "jest";
+// import nextJest from "next/jest.js";
+
+// const createJestConfig = nextJest({
+//   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+//   dir: "./",
+// });
+
+// // // Add any custom config to be passed to Jest
+// // const config: Config = {
+// //   // Add more setup options before each test is run
+// //   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+// //   testEnvironment: "jest-environment-jsdom",
+// //   preset: "ts-jest",
+// // };
+
+// // // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+// // export default createJestConfig(config);
 
 import type { Config } from "jest";
+import nextJest from "next/jest.js";
 
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: "./",
+});
+
+// Add any custom config to be passed to Jest
 const config: Config = {
-  preset: "ts-jest",
+  coverageProvider: "v8",
   testEnvironment: "jsdom",
-  transform: {
-    "^.+\\.tsx?$": "ts-jest", // Transform TypeScript files
-  },
-  moduleNameMapper: {
-    // Add any path aliases if you're using them in your project
-    "^@/(.*)$": "<rootDir>/src/$1",
-  },
-  // other configurations
+  // Add more setup options before each test is run
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  preset: "ts-jest",
 };
 
-export default config;
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+export default createJestConfig(config);
