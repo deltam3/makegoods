@@ -19,9 +19,7 @@ export default function Home() {
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-4sxl">
                 당신만의
                 <br />
-                <span className="bg-yellow-400 px-2 text-white">
-                  침착맨 굿즈
-                </span>
+                <span className="bg-yellow-400 px-2 text-white">굿즈</span>
                 를
                 <br />
                 만들어봐요
@@ -169,7 +167,7 @@ export default function Home() {
                       ></path>
                     </svg>
                   </div>
-                  <span className="whitespace-nowrap">침착맨 싸인</span>
+                  <span className="whitespace-nowrap"> 싸인</span>
                 </li>
               </div>
             </ul> */}
@@ -323,7 +321,7 @@ export default function Home() {
             </li>
             <li className="w-fit">
               <Check className="h-5 w-5 text-primary inline mr-1.5" />
-              침착맨 싸인 옵션
+              국산 제작
             </li>
             <li className="w-fit">
               <Check className="h-5 w-5 text-primary inline mr-1.5" />
@@ -342,8 +340,7 @@ export default function Home() {
                 })}
                 href="/configure/upload"
               >
-                지금 당장 침착맨 굿즈 제작{" "}
-                <ArrowRight className="h-4 w-4 ml-1.5" />
+                지금 당장 굿즈 제작 <ArrowRight className="h-4 w-4 ml-1.5" />
               </Link>
             </div>
           </ul>

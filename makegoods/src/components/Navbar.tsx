@@ -11,7 +11,7 @@ const Navbar = async () => {
           <div className="pointer-events-none">
             <Link href="/" className="z-40 ">
               <img
-                src="/logo.png"
+                src="/logoipsum.png"
                 className="object-fit w-[30%] pointer-events-auto"
               />
             </Link>
