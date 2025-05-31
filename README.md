@@ -1,8 +1,8 @@
 <p align="middle" >
-  <img width="200px" src="https://github.com/user-attachments/assets/1ce17f3c-11eb-4897-a0d2-d4b9f534b8b2" alt="chim-logo"/>
+  <img width="900px" src="https://github.com/user-attachments/assets/4d4f2460-9ae3-4464-b931-f0133c812dff" alt="logo"/>
 </p>
-<h1 align="middle">침 굿즈</h1>
-<h3 align="middle">당신만의 침착맨 굿즈 제작 서비스</h3>
+<h1 align="middle">굿즈</h1>
+<h3 align="middle">당신만의 굿즈 제작 서비스</h3>
 
 <br/>
 
@@ -10,7 +10,7 @@
 
 
 ## 📝 Introduce
-침굿즈는 침착맨 이미지로 팬들이 침착맨 굿즈를 제작할 수 있는 서비스입니다.
+이미지로 자기만의 굿즈를 제작할 수 있는 서비스입니다.
 
 
 ## 💯 What I Learned (배운점들)
@@ -18,7 +18,7 @@
 
 ## 🐤 Demo
 
-- [침굿즈 시작하기](https://makegoods.vercel.app/)
+- [굿즈 시작하기](https://makegoods.vercel.app/)
 
 ## ⭐ Main Feature
 - 이미지 자르기 기능 - canvas API를 활용해 필요한 이미지 부분만 굿즈에 포함
