@@ -1,5 +1,5 @@
 <p align="middle" >
-  <img width="200px" src="https://github.com/user-attachments/assets/4d4f2460-9ae3-4464-b931-f0133c812dff" alt="logo"/>
+  <img width="900px" src="https://github.com/user-attachments/assets/4d4f2460-9ae3-4464-b931-f0133c812dff" alt="logo"/>
 </p>
 <h1 align="middle">굿즈</h1>
 <h3 align="middle">당신만의 굿즈 제작 서비스</h3>
